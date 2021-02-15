@@ -1,4 +1,4 @@
-name: AWS SSM Send-Command Example
+name: Deploy via SSM
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: AWS SSM Send-Command
+      - name: Deploy to test server
         uses: peterkimzz/aws-ssm-send-command@master
         id: ssm
         with:
@@ -23,6 +23,3 @@ jobs:
           working-directory: /home/django
           command: /bin/bash ./deploy.sh > deployment.log 2>&1
 
-      # Catch SSM outputs
-      - name: Get the outputs
-        run: echo "The Command id is ${{ steps.ssm.outputs.command-id }}"
