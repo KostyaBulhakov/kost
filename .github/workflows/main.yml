@@ -21,7 +21,7 @@ jobs:
           instance-ids: ${{ secrets.INSTANCE_ID }}
 
           working-directory: /home/django
-          command: /bin/sh ./deploy.sh
+          command: /bin/sh ./deploy.sh >> deployment.log
 
       # Catch SSM outputs
       - name: Get the outputs
