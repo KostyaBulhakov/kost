@@ -1,4 +1,4 @@
-name: Deploy via SSM
+name: Deploy via SSM on trigger
 
 on:
   workflow_dispatch
